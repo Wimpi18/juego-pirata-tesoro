@@ -34,5 +34,12 @@ public class Main
         }
         tablero.iniciar(n);
         System.out.println(tablero.mostrar());
+        //tablero.jugar();
+        for(int j = 0; j < 60; j++){
+            System.out.println("El pirata se mueve" + j);
+            tablero.jugar();
+            System.out.println(tablero.mostrar());
+        }
+        
     }
 }

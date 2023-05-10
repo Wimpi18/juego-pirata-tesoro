@@ -91,5 +91,9 @@ public class Tablero
         muestra += separador;
         return muestra;
     }
-
+    
+    public void jugar(){
+        pirata.moverPirata();
+        iniciar(n);
+    }
 }
