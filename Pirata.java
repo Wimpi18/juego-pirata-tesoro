@@ -16,7 +16,7 @@ public class Pirata extends Elemento{
     }
     public void moverPirata(){
         int direccion = (int)(Math.random() * 4 + 1);
-        if(contador < 51){
+        if(contador < 50){
             switch(direccion){
                 case 1:
                     setX(getX() - 1);
@@ -36,5 +36,13 @@ public class Pirata extends Elemento{
                     break;
             }
         }
+    }
+    
+    public int getContador(){
+        return contador;
+    }
+    
+    public void setContador(int c){
+        contador = c;
     }
 }

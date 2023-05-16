@@ -1,4 +1,4 @@
-
+import java.util.Arrays;
 /**
  * Write a description of class Tablero here.
  * 
@@ -12,6 +12,9 @@ public class Tablero
     private int n;
     private Pirata pirata;
     private Tesoro tesoro;
+    private boolean juegoFinalizado;
+    private String mensaje;
+
     /**
      * Constructor for objects of class Tablero
      */
@@ -19,6 +22,7 @@ public class Tablero
     {
         this.pirata = pirata;
         this.tesoro = tesoro;
+        mensaje = null;
     }
 
     String verificarn(int n){
@@ -54,10 +58,10 @@ public class Tablero
         }
 
         if(pirata != null && tesoro != null){
-            matriz[pirata.getX()][pirata.getY()] = 'W';
             matriz[tesoro.getX()][tesoro.getY()] = 'T';
+            matriz[pirata.getX()][pirata.getY()] = 'W';
         }
-        
+
         matriz[0][0] = matriz[n-1][n-1] = 'A';
         matriz[0][n-1] = matriz[n-1][0] = 'P';
     }
@@ -83,17 +87,38 @@ public class Tablero
                 fila += "| " + matriz[i][j] + " ";
             }
             fila += "|";
-
             muestra += separador + "\n" + fila + "\n";
-
         }
 
         muestra += separador;
         return muestra;
     }
-    
+
     public void jugar(){
         pirata.moverPirata();
+        verificarEstadoJuego();
         iniciar(n);
+    }
+
+    public void verificarEstadoJuego(){
+        juegoFinalizado = true;
+        if(Arrays.equals(pirata.getCoordenadas(), tesoro.getCoordenadas())){
+            mensaje = "VICTORIA!!! TESORO ENCONTRADO!!!";
+        } else if(pirata.getX() == 0 || pirata.getX() == n-1 ||
+        pirata.getY() == 0 || pirata.getY() == n-1){
+            mensaje = "DERROTA, PIRATA AHOGADO";
+        } else if(pirata.getContador() >= 50){
+            mensaje = "DERROTA, LÍMITE DE MOVIMIENTOS ALCANZADO";
+        } else {
+            juegoFinalizado = false;
+        }
+    }
+
+    public boolean juegoFinalizado(){
+        return juegoFinalizado;
+    }
+
+    public String getMensaje(){
+        return mensaje;
     }
 }
