@@ -1,6 +1,7 @@
 #BlueJ class context
 comment0.target=Tesoro
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Tesoro\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ La\ clase\ Tesoro\ solo\ debe\ posicionarse\ en\ una\ casilla\ v\u00E1lida\ del\ Tablero\r\n\ \r\n\ @author\ Maida\ Rojas\ Jairo\ Andree,\ \ Morales\ Pinto\ Giulianno\ Alejandro,\ Orellana\ V\u00E1squez\ Winsor\ Omar,\ Vallejos\ Delgadillo\ Mariana\ Andre\r\n\ @version\ 1.0.0\r\n
 comment1.params=x\ y
 comment1.target=Tesoro(int,\ int)
+comment1.text=\r\n\ Constructor\ de\ la\ clase\ Tesoro\r\n\ \r\n\ @param\ x\ Coordenada\ en\ x\ (filas)\r\n\ @param\ x\ Coordenada\ en\ y\ (columnas)\r\n
 numComments=2

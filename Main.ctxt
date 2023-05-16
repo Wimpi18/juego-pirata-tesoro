@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Main
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Main\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ La\ clase\ Main\ se\ encarga\ de\ ejecutar\ el\ programa,\ para\ ello\ genera\ un\ Random,\ un\ Scanner,\ un\ Pirata,\ un\ Tesoro\ y\ el\ Tablero.\r\n\ \r\n\ @author\ Maida\ Rojas\ Jairo\ Andree,\ \ Morales\ Pinto\ Giulianno\ Alejandro,\ Orellana\ V\u00E1squez\ Winsor\ Omar,\ Vallejos\ Delgadillo\ Mariana\ Andre\r\n\ @version\ 1.0.0\r\n
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
 numComments=2

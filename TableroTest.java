@@ -5,16 +5,18 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
- * The test class TableroTest.
+ * Clase test TableroTest.
  *
- * @author  (your name)
- * @version (a version number or a date)
+ * @author Maida Rojas Jairo Andree,  Morales Pinto Giulianno Alejandro, Orellana Vásquez Winsor Omar, Vallejos Delgadillo Mariana Andre
+ * @version 1.0.0 
  */
 public class TableroTest
 {
 
-    
-    @Test 
+    /**
+     * Test de la creación correcta de una matriz de tamaño 5
+     */
+    @Test
     public void iniciarMatriz(){
         Tablero tablero;
 
@@ -36,6 +38,10 @@ public class TableroTest
 
         assertEquals(res, tablero.mostrar());
     }
+    
+    /**
+     * Test de la verificación del valor N sea >= 4
+     */
     @Test 
     public void verificarN(){
         Tablero tablero;
@@ -45,6 +51,10 @@ public class TableroTest
         assertEquals(res, tablero.verificarn(3));
     }
 
+    /**
+     * Test de victoria dado una posicial inicial cercana a una casilla y un movimiento en el cual el Pirata y el Tesoro coinciden 
+     * en la misma casilla
+     */
     @Test 
     public void testVictoria(){
         Pirata pirata = new Pirata(2, 2);
@@ -58,6 +68,9 @@ public class TableroTest
         assertEquals("VICTORIA!!! TESORO ENCONTRADO!!!", tablero.getMensaje());
     }
 
+    /**
+     * Test de derrota en el que el Pirata se queda sin movimientos
+     */
     @Test 
     public void testDerrotaContador(){
         Pirata pirata = new Pirata(1, 1);
@@ -71,6 +84,9 @@ public class TableroTest
         assertEquals("DERROTA, LÍMITE DE MOVIMIENTOS ALCANZADO", tablero.getMensaje());
     }
 
+    /**
+     * Test de derrota dado una posicial inicial cercana al borde y un movimiento en el cual el Pirata coincide con dicho borde
+     */
     @Test 
     public void testDerrotaAhogado(){
         Pirata pirata = new Pirata(1, 1);

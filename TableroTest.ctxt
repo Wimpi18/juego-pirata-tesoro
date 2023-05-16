@@ -1,14 +1,19 @@
 #BlueJ class context
 comment0.target=TableroTest
-comment0.text=\r\n\ The\ test\ class\ TableroTest.\r\n\r\n\ @author\ \ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Clase\ test\ TableroTest.\r\n\r\n\ @author\ Maida\ Rojas\ Jairo\ Andree,\ \ Morales\ Pinto\ Giulianno\ Alejandro,\ Orellana\ V\u00E1squez\ Winsor\ Omar,\ Vallejos\ Delgadillo\ Mariana\ Andre\r\n\ @version\ 1.0.0\ \r\n
 comment1.params=
 comment1.target=void\ iniciarMatriz()
+comment1.text=\r\n\ Test\ de\ la\ creaci\u00F3n\ correcta\ de\ una\ matriz\ de\ tama\u00F1o\ 5\r\n
 comment2.params=
 comment2.target=void\ verificarN()
+comment2.text=\r\n\ Test\ de\ la\ verificaci\u00F3n\ del\ valor\ N\ sea\ >\=\ 4\r\n
 comment3.params=
 comment3.target=void\ testVictoria()
+comment3.text=\r\n\ Test\ de\ victoria\ dado\ una\ posicial\ inicial\ cercana\ a\ una\ casilla\ y\ un\ movimiento\ en\ el\ cual\ el\ Pirata\ y\ el\ Tesoro\ coinciden\ \r\n\ en\ la\ misma\ casilla\r\n
 comment4.params=
 comment4.target=void\ testDerrotaContador()
+comment4.text=\r\n\ Test\ de\ derrota\ en\ el\ que\ el\ Pirata\ se\ queda\ sin\ movimientos\r\n
 comment5.params=
 comment5.target=void\ testDerrotaAhogado()
+comment5.text=\r\n\ Test\ de\ derrota\ dado\ una\ posicial\ inicial\ cercana\ al\ borde\ y\ un\ movimiento\ en\ el\ cual\ el\ Pirata\ coincide\ con\ dicho\ borde\r\n
 numComments=6
