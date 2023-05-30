@@ -52,7 +52,7 @@ public class TableroTest
     }
 
     /**
-     * Test de victoria dado una posicial inicial cercana a una casilla y un movimiento en el cual el Pirata y el Tesoro coinciden 
+     * Test de victoria dado una posición inicial cercana a una casilla y un movimiento en el cual el Pirata y el Tesoro coinciden 
      * en la misma casilla
      */
     @Test 
