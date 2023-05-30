@@ -18,7 +18,6 @@ public class Main
 
         Scanner lector = new Scanner(System.in);
         int tamanio;
-        String mensaje = "";
 
         do{
             System.out.println("Introduzca el valor de N");

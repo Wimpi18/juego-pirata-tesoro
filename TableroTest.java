@@ -21,7 +21,6 @@ public class TableroTest
         Pirata pirata = new Pirata(2, 2);
         Tesoro tesoro = new Tesoro(2, 3);
         Tablero tablero = new Tablero(5, pirata, tesoro);
-        tablero.iniciar(5);
 
         String res = "+---+---+---+---+---+\n" +
             "| A | G | U | A | P |\n" +
@@ -59,7 +58,7 @@ public class TableroTest
         Pirata pirata = new Pirata(2, 2);
         Tesoro tesoro = new Tesoro(2, 3);
         Tablero tablero = new Tablero(5, pirata, tesoro);
-        tablero.iniciar(5);
+        
         pirata.setY(pirata.getY()+1);
         tablero.verificarEstadoJuego();
 
@@ -74,7 +73,6 @@ public class TableroTest
         Pirata pirata = new Pirata(1, 1);
         Tesoro tesoro = new Tesoro(2, 3);
         Tablero tablero = new Tablero(5, pirata, tesoro); 
-        tablero.iniciar(5);
 
         pirata.setContador(50);
         tablero.verificarEstadoJuego();
@@ -90,7 +88,6 @@ public class TableroTest
         Pirata pirata = new Pirata(1, 1);
         Tesoro tesoro = new Tesoro(2, 3);
         Tablero tablero = new Tablero(5, pirata, tesoro);
-        tablero.iniciar(5);
 
         pirata.setY(pirata.getX()-1);
         tablero.verificarEstadoJuego();

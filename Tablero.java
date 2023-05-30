@@ -8,8 +8,6 @@ import java.util.Arrays;
  * @version 1.0.0
  */
 public class Tablero{
-    
-    private char [][] matriz;
     private int tamanio;
     private Pirata pirata;
     private Tesoro tesoro;
@@ -30,27 +28,23 @@ public class Tablero{
         mensaje = null;
     }
 
-    /**
-     * Dado un 'n' se asignará al tamaño de la matriz para inicializar la matriz de caracteres con sus respectivos valores (AGUA, W, T, P)
-     * 
-     * @param n Tamaño de la matriz cuadrada a generar
-     */
-    public void iniciar(int n){
-        this.tamanio = n;
-        matriz = new char[n][n];
-        for(int i = 1; i < n-1; i++){
-            for(int j = 0; j < n-1; j++){
+    public char[][] cargarMatriz(){
+        char[][] matriz;
+        
+        matriz = new char[tamanio][tamanio];
+        for(int i = 1; i < tamanio-1; i++){
+            for(int j = 0; j < tamanio-1; j++){
                 matriz[i][j] = ' ';
             }
         }
 
-        for(int i = 1, j = 1; i < n-1; i++, j++){
+        for(int i = 1, j = 1; i < tamanio-1; i++, j++){
             if(j == 1){
-                matriz[0][i] = matriz[i][0] = matriz[n-1-i][n-1] = matriz[n-1][n-1-i] = 'G';
+                matriz[0][i] = matriz[i][0] = matriz[tamanio-1-i][tamanio-1] = matriz[tamanio-1][tamanio-1-i] = 'G';
             } else if(j == 2){
-                matriz[0][i] = matriz[i][0] = matriz[n-1-i][n-1] = matriz[n-1][n-1-i] = 'U';
+                matriz[0][i] = matriz[i][0] = matriz[tamanio-1-i][tamanio-1] = matriz[tamanio-1][tamanio-1-i] = 'U';
             } else{
-                matriz[0][i] = matriz[i][0] = matriz[n-1-i][n-1] = matriz[n-1][n-1-i] = 'A';
+                matriz[0][i] = matriz[i][0] = matriz[tamanio-1-i][tamanio-1] = matriz[tamanio-1][tamanio-1-i] = 'A';
                 j = 0;
             }
         }
@@ -60,19 +54,20 @@ public class Tablero{
             matriz[pirata.getX()][pirata.getY()] = 'W';
         }
 
-        matriz[0][0] = matriz[n-1][n-1] = 'A';
-        matriz[0][n-1] = matriz[n-1][0] = 'P';
+        matriz[0][0] = matriz[tamanio-1][tamanio-1] = 'A';
+        matriz[0][tamanio-1] = matriz[tamanio-1][0] = 'P';
+        
+        return matriz;
     }
 
     /**
      * Genera la matriz para imprimirse en consola
      */
     public String mostrar(){
-        String muestra;
-
-        String separador;
-        String fila;
-
+        String muestra, separador, fila;
+        char[][] matriz;
+        
+        matriz = cargarMatriz();
         muestra = "";
         separador = "";
 
@@ -92,6 +87,7 @@ public class Tablero{
         }
 
         muestra += separador;
+        
         return muestra;
     }
 
@@ -102,7 +98,7 @@ public class Tablero{
     public void jugar(){
         pirata.moverPirata();
         verificarEstadoJuego();
-        iniciar(tamanio);
+        cargarMatriz();
     }
 
     /**
