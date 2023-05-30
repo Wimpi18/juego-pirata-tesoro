@@ -30,23 +30,6 @@ public class Tablero{
     }
 
     /**
-     * Dado un 'n' se verificará que este 'n' sea >= 4
-     * 
-     * @param n Tamaño de la matriz cuadrada a generar
-     */
-    String verificarn(int n){
-        String mensaje;
-        
-        if(n >= 4){
-            mensaje = null;
-        }else{
-            mensaje = "Valor de n invalido, n debe ser mayor o igual a 4";
-        }
-        
-        return mensaje;
-    }
-
-    /**
      * Dado un 'n' se asignará al tamaño de la matriz para inicializar la matriz de caracteres con sus respectivos valores (AGUA, W, T, P)
      * 
      * @param n Tamaño de la matriz cuadrada a generar

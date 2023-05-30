@@ -6,7 +6,7 @@ import java.util.*;
  * @version 1.0.0
  */
 public class Pirata extends Elemento{
-    int contador;
+    private int contador;
     
     /**
      * Constructor de la clase Pirata

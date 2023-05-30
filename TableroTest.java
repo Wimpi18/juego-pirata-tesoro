@@ -44,11 +44,11 @@ public class TableroTest
      */
     @Test 
     public void verificarN(){
-        Tablero tablero;
-        tablero = new Tablero(null, null);
-
-        String res = "Valor de n invalido, n debe ser mayor o igual a 4";
-        assertEquals(res, tablero.verificarn(3));
+        Verificador verificador;
+        
+        verificador = new Verificador();
+        String res = "Valor de N invalido, N debe ser mayor o igual a 4";
+        assertEquals(res, verificador.verificarTamanio(3));
     }
 
     /**

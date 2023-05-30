@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.target=Verificador
+comment1.params=tamanio
+comment1.target=java.lang.String\ verificarTamanio(int)
+numComments=2

@@ -14,40 +14,37 @@ public class Main
         Pirata pirata = new Pirata(1, 2);
         Tesoro tesoro = new Tesoro(1, 3);
         Tablero tablero = new Tablero(pirata, tesoro);
+        Verificador verificador = new Verificador();
 
         Scanner lector = new Scanner(System.in);
-        int n = 0;
+        int tamanio;
         String mensaje = "";
 
-        /**
-         * Mientras no se introduzca un N >= 4 entonces no se generará el tablero
-         */
-        while(mensaje != null){
+        do{
             System.out.println("Introduzca el valor de N");
-            n = lector.nextInt();
-            mensaje = tablero.verificarn(n);
-            if(mensaje != null){
-                System.out.println(mensaje);
+            tamanio = lector.nextInt();
+            if(verificador.verificarTamanio(tamanio) != null){
+                System.out.println(verificador.verificarTamanio(tamanio));
             }
-        }
+        }while(verificador.verificarTamanio(tamanio) != null);
 
         /**
          * Dar posiciones al pirata y al tesoro
          */
-        tesoro.setX(rand.nextInt(n-2) + 1); tesoro.setY(rand.nextInt(n-2) + 1);
-        pirata.setX(rand.nextInt(n-2) + 1); pirata.setY(rand.nextInt(n-2) + 1);
+        tesoro.setX(rand.nextInt(tamanio-2) + 1); tesoro.setY(rand.nextInt(tamanio-2) + 1);
+        pirata.setX(rand.nextInt(tamanio-2) + 1); pirata.setY(rand.nextInt(tamanio-2) + 1);
 
         /**
          * Mientras las posiciones del tesoro y pirata sean iguales, se asignará otra posición al pirata
          */
         while(tesoro.getX() == pirata.getX() && tesoro.getY() == pirata.getY()){
-            pirata.setX(rand.nextInt(n-2) + 1); pirata.setY(rand.nextInt(n-2) + 1);
+            pirata.setX(rand.nextInt(tamanio-2) + 1); pirata.setY(rand.nextInt(tamanio-2) + 1);
         }
 
         /**
          * Estado inicial
          */
-        tablero.iniciar(n);
+        tablero.iniciar(tamanio);
         System.out.println(tablero.mostrar());
         System.out.println("Contador de movimientos " + pirata.getContador());
         System.out.println();
