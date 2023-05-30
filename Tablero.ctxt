@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.target=Tablero
 comment0.text=\r\n\ La\ clase\ Tablero\ se\ encarga\ de\ administrar\ al\ Pirata\ y\ al\ Tesoro,\ tambi\u00E9n\ cuenta\ con\ un\ 'n'\ para\ generar\ la\ matriz\ del\ tablero\ el\ cual\r\n\ debe\ ser\ mayor\ o\ igual\ a\ 4,\ el\ mismo\ tablero\ se\ encarga\ de\ verificar\ este\ valor.\ Por\ \u00FAltimo\ verifica\ el\ estado\ del\ juego\r\n\ y\ genera\ un\ mensaje\ de\ acuerdo\ a\ dicho\ estado.\r\n\ \r\n\ @author\ Maida\ Rojas\ Jairo\ Andree,\ \ Morales\ Pinto\ Giulianno\ Alejandro,\ Orellana\ V\u00E1squez\ Winsor\ Omar,\ Vallejos\ Delgadillo\ Mariana\ Andre\r\n\ @version\ 1.0.0\r\n
-comment1.params=pirata\ tesoro
-comment1.target=Tablero(Pirata,\ Tesoro)
+comment1.params=tamanio\ pirata\ tesoro
+comment1.target=Tablero(int,\ Pirata,\ Tesoro)
 comment1.text=\r\n\ Constructor\ de\ la\ clase\ Tablero\r\n\ \r\n\ @param\ pirata\ Se\ requiere\ un\ pirata\ para\ jugar\ una\ partida\r\n\ @param\ tesoro\ Se\ requiere\ un\ tesoro\ el\ cual\ intentar\u00E1\ encontrar\ el\ pirata\ \r\n
 comment2.params=n
 comment2.target=void\ iniciar(int)

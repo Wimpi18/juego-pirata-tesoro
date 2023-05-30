@@ -10,7 +10,7 @@ import java.util.Arrays;
 public class Tablero{
     
     private char [][] matriz;
-    private int n;
+    private int tamanio;
     private Pirata pirata;
     private Tesoro tesoro;
     private boolean juegoFinalizado;
@@ -22,8 +22,9 @@ public class Tablero{
      * @param pirata Se requiere un pirata para jugar una partida
      * @param tesoro Se requiere un tesoro el cual intentará encontrar el pirata 
      */
-    public Tablero(Pirata pirata, Tesoro tesoro)
+    public Tablero(int tamanio, Pirata pirata, Tesoro tesoro)
     {
+        this.tamanio = tamanio;
         this.pirata = pirata;
         this.tesoro = tesoro;
         mensaje = null;
@@ -35,7 +36,7 @@ public class Tablero{
      * @param n Tamaño de la matriz cuadrada a generar
      */
     public void iniciar(int n){
-        this.n = n;
+        this.tamanio = n;
         matriz = new char[n][n];
         for(int i = 1; i < n-1; i++){
             for(int j = 0; j < n-1; j++){
@@ -75,15 +76,15 @@ public class Tablero{
         muestra = "";
         separador = "";
 
-        for(int i = 0 ; i < n ; i++){
+        for(int i = 0 ; i < tamanio ; i++){
             separador += "+---";
         }
         separador += "+";
 
-        for(int i = 0 ; i < n ; i++){
+        for(int i = 0 ; i < tamanio ; i++){
             fila = "";
 
-            for(int j = 0 ; j < n ; j++){
+            for(int j = 0 ; j < tamanio; j++){
                 fila += "| " + matriz[i][j] + " ";
             }
             fila += "|";
@@ -101,7 +102,7 @@ public class Tablero{
     public void jugar(){
         pirata.moverPirata();
         verificarEstadoJuego();
-        iniciar(n);
+        iniciar(tamanio);
     }
 
     /**
@@ -113,8 +114,8 @@ public class Tablero{
         juegoFinalizado = true;
         if(Arrays.equals(pirata.getCoordenadas(), tesoro.getCoordenadas())){
             mensaje = "VICTORIA!!! TESORO ENCONTRADO!!!";
-        } else if(pirata.getX() == 0 || pirata.getX() == n-1 ||
-        pirata.getY() == 0 || pirata.getY() == n-1){
+        } else if(pirata.getX() == 0 || pirata.getX() == tamanio-1 ||
+        pirata.getY() == 0 || pirata.getY() == tamanio-1){
             mensaje = "DERROTA, PIRATA AHOGADO";
         } else if(pirata.getContador() >= 50){
             mensaje = "DERROTA, LÍMITE DE MOVIMIENTOS ALCANZADO";

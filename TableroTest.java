@@ -18,10 +18,9 @@ public class TableroTest
      */
     @Test
     public void iniciarMatriz(){
-        Tablero tablero;
-
-        tablero = new Tablero(null, null);
-
+        Pirata pirata = new Pirata(2, 2);
+        Tesoro tesoro = new Tesoro(2, 3);
+        Tablero tablero = new Tablero(5, pirata, tesoro);
         tablero.iniciar(5);
 
         String res = "+---+---+---+---+---+\n" +
@@ -29,7 +28,7 @@ public class TableroTest
             "+---+---+---+---+---+\n" +
             "| G |   |   |   | A |\n" +
             "+---+---+---+---+---+\n" +
-            "| U |   |   |   | U |\n" +
+            "| U |   | W | T | U |\n" +
             "+---+---+---+---+---+\n" +
             "| A |   |   |   | G |\n" +
             "+---+---+---+---+---+\n" +
@@ -59,9 +58,8 @@ public class TableroTest
     public void testVictoria(){
         Pirata pirata = new Pirata(2, 2);
         Tesoro tesoro = new Tesoro(2, 3);
-        Tablero tablero = new Tablero(pirata, tesoro);
-        tablero.iniciar(5); 
-
+        Tablero tablero = new Tablero(5, pirata, tesoro);
+        tablero.iniciar(5);
         pirata.setY(pirata.getY()+1);
         tablero.verificarEstadoJuego();
 
@@ -75,8 +73,8 @@ public class TableroTest
     public void testDerrotaContador(){
         Pirata pirata = new Pirata(1, 1);
         Tesoro tesoro = new Tesoro(2, 3);
-        Tablero tablero = new Tablero(pirata, tesoro);
-        tablero.iniciar(5); 
+        Tablero tablero = new Tablero(5, pirata, tesoro); 
+        tablero.iniciar(5);
 
         pirata.setContador(50);
         tablero.verificarEstadoJuego();
@@ -91,8 +89,8 @@ public class TableroTest
     public void testDerrotaAhogado(){
         Pirata pirata = new Pirata(1, 1);
         Tesoro tesoro = new Tesoro(2, 3);
-        Tablero tablero = new Tablero(pirata, tesoro);
-        tablero.iniciar(5); 
+        Tablero tablero = new Tablero(5, pirata, tesoro);
+        tablero.iniciar(5);
 
         pirata.setY(pirata.getX()-1);
         tablero.verificarEstadoJuego();

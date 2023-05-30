@@ -13,7 +13,7 @@ public class Main
         Random rand = new Random();
         Pirata pirata = new Pirata(1, 2);
         Tesoro tesoro = new Tesoro(1, 3);
-        Tablero tablero = new Tablero(pirata, tesoro);
+        Tablero tablero;
         Verificador verificador = new Verificador();
 
         Scanner lector = new Scanner(System.in);
@@ -44,7 +44,7 @@ public class Main
         /**
          * Estado inicial
          */
-        tablero.iniciar(tamanio);
+        tablero = new Tablero(tamanio, pirata, tesoro);
         System.out.println(tablero.mostrar());
         System.out.println("Contador de movimientos " + pirata.getContador());
         System.out.println();
