@@ -10,27 +10,16 @@ import java.util.Random;
 public class Main
 {
     public static void main(String args[]){
-        
         Pirata pirata;
         Tesoro tesoro;
         Tablero tablero;
-        Verificador verificador = new Verificador();
-        int[] posicionPirata;
-        int[] posicionTesoro;
-        Posicionador posicionador;
-        
-        Scanner lector = new Scanner(System.in);
         int tamanio;
-
+        
         tamanio = obtenerTamanioTablero();
         
-        posicionPirata = new int[2];
-        posicionTesoro = new int[2];
-        posicionador = new Posicionador();
-        posicionador.generarPosiciones(posicionPirata, posicionTesoro, tamanio);
-        
-        pirata = new Pirata(posicionPirata);
-        tesoro = new Tesoro(posicionTesoro);
+        pirata = new Pirata(new int[2]);
+        tesoro = new Tesoro(new int[2]);
+        iniciarPirataYTesoro(pirata, tesoro, tamanio);
         
 
         /**
@@ -80,5 +69,19 @@ public class Main
         }while(verificador.verificarTamanio(tamanio) != null);
         
         return tamanio;
+    }
+    
+    private static void iniciarPirataYTesoro(Pirata pirata, Tesoro tesoro, int tamanio){
+        Posicionador posicionador;
+        int[] posicionPirata;
+        int[] posicionTesoro;
+        posicionPirata = new int[2];
+        posicionTesoro = new int[2];
+        
+        posicionador = new Posicionador();
+        posicionador.generarPosiciones(posicionPirata, posicionTesoro, tamanio);
+        
+        pirata = new Pirata(posicionPirata);
+        tesoro = new Tesoro(posicionTesoro);
     }
 }

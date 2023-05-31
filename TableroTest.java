@@ -18,8 +18,8 @@ public class TableroTest
      */
     @Test
     public void iniciarMatriz(){
-        Pirata pirata = new Pirata(2, 2);
-        Tesoro tesoro = new Tesoro(2, 3);
+        Pirata pirata = new Pirata(new int[]{2,2});
+        Tesoro tesoro = new Tesoro(new int[]{2,3});
         Tablero tablero = new Tablero(5, pirata, tesoro);
 
         String res = "+---+---+---+---+---+\n" +
@@ -55,8 +55,8 @@ public class TableroTest
      */
     @Test 
     public void testVictoria(){
-        Pirata pirata = new Pirata(2, 2);
-        Tesoro tesoro = new Tesoro(2, 3);
+        Pirata pirata = new Pirata(new int[]{2,2});
+        Tesoro tesoro = new Tesoro(new int[]{2,3});
         Tablero tablero = new Tablero(5, pirata, tesoro);
         
         pirata.setY(pirata.getY()+1);
@@ -70,8 +70,8 @@ public class TableroTest
      */
     @Test 
     public void testDerrotaContador(){
-        Pirata pirata = new Pirata(1, 1);
-        Tesoro tesoro = new Tesoro(2, 3);
+        Pirata pirata = new Pirata(new int[]{1,1});
+        Tesoro tesoro = new Tesoro(new int[]{2,3});
         Tablero tablero = new Tablero(5, pirata, tesoro); 
 
         pirata.setContador(50);
@@ -85,8 +85,8 @@ public class TableroTest
      */
     @Test 
     public void testDerrotaAhogado(){
-        Pirata pirata = new Pirata(1, 1);
-        Tesoro tesoro = new Tesoro(2, 3);
+        Pirata pirata = new Pirata(new int[]{1,1});
+        Tesoro tesoro = new Tesoro(new int[]{2,3});
         Tablero tablero = new Tablero(5, pirata, tesoro);
 
         pirata.setY(pirata.getX()-1);
