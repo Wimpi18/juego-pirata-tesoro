@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.target=Posicionador
+comment1.params=posicion1\ posicion2\ tamanio
+comment1.target=void\ generarPosiciones(int[],\ int[],\ int)
+numComments=2

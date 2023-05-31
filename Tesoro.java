@@ -12,7 +12,7 @@ public class Tesoro extends Elemento{
      * @param x Coordenada en x (filas)
      * @param x Coordenada en y (columnas)
      */
-    public Tesoro(int x, int y){
-        super(x, y);
+    public Tesoro(int[] coordenadas){
+        super(coordenadas);
     }
 }

@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.target=Elemento
 comment0.text=\r\n\ Clase\ abstracta\ Elemento\ -\ Nos\ permite\ generalizar\ los\ atributos\ y\ funciones\ en\ com\u00FAn\ entre\ Tablero\ y\ Pirata\r\n\ \r\n\ @author\ Maida\ Rojas\ Jairo\ Andree,\ \ Morales\ Pinto\ Giulianno\ Alejandro,\ Orellana\ V\u00E1squez\ Winsor\ Omar,\ Vallejos\ Delgadillo\ Mariana\ Andre\r\n\ @version\ 1.0.0\ \r\n
-comment1.params=x\ y
-comment1.target=Elemento(int,\ int)
+comment1.params=coordenadas
+comment1.target=Elemento(int[])
 comment1.text=\r\n\ Constructor\ de\ la\ clase\ Elemento\r\n\ \r\n\ @param\ x\ Coordenada\ en\ x\ (filas)\r\n\ @param\ x\ Coordenada\ en\ y\ (columnas)\r\n
 comment2.params=x
 comment2.target=void\ setX(int)

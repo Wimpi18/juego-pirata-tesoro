@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.target=Pirata
 comment0.text=\r\n\ La\ clase\ Pirata\ debe\ posicionarse\ en\ una\ casilla\ v\u00E1lida\ del\ Tablero\ distinta\ a\ la\ del\ Tesoro\ y\ ser\ capaz\ de\ moverse\ 50\ veces\r\n\ \r\n\ @author\ Maida\ Rojas\ Jairo\ Andree,\ \ Morales\ Pinto\ Giulianno\ Alejandro,\ Orellana\ V\u00E1squez\ Winsor\ Omar,\ Vallejos\ Delgadillo\ Mariana\ Andre\r\n\ @version\ 1.0.0\r\n
-comment1.params=x\ y
-comment1.target=Pirata(int,\ int)
+comment1.params=coordenadas
+comment1.target=Pirata(int[])
 comment1.text=\r\n\ Constructor\ de\ la\ clase\ Pirata\r\n\ \r\n\ @param\ x\ Coordenada\ en\ x\ (filas)\r\n\ @param\ x\ Coordenada\ en\ y\ (columnas)\r\n
 comment2.params=
 comment2.target=void\ incrementarContador()

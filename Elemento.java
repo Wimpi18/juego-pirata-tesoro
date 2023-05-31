@@ -14,10 +14,8 @@ public abstract class Elemento
      * @param x Coordenada en x (filas)
      * @param x Coordenada en y (columnas)
      */
-    public Elemento(int x, int y){
-        coordenadas = new int[2];
-        coordenadas[0] = x;
-        coordenadas[1] = y;
+    public Elemento(int[] coordenadas){
+        this.coordenadas = coordenadas;
     }
     
     protected void setX(int x){

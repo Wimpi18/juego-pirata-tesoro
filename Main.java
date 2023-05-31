@@ -10,12 +10,15 @@ import java.util.Random;
 public class Main
 {
     public static void main(String args[]){
-        Random rand = new Random();
-        Pirata pirata = new Pirata(1, 2);
-        Tesoro tesoro = new Tesoro(1, 3);
+        
+        Pirata pirata;
+        Tesoro tesoro;
         Tablero tablero;
         Verificador verificador = new Verificador();
-
+        int[] posicionPirata;
+        int[] posicionTesoro;
+        Posicionador posicionador;
+        
         Scanner lector = new Scanner(System.in);
         int tamanio;
 
@@ -26,19 +29,15 @@ public class Main
                 System.out.println(verificador.verificarTamanio(tamanio));
             }
         }while(verificador.verificarTamanio(tamanio) != null);
-
-        /**
-         * Dar posiciones al pirata y al tesoro
-         */
-        tesoro.setX(rand.nextInt(tamanio-2) + 1); tesoro.setY(rand.nextInt(tamanio-2) + 1);
-        pirata.setX(rand.nextInt(tamanio-2) + 1); pirata.setY(rand.nextInt(tamanio-2) + 1);
-
-        /**
-         * Mientras las posiciones del tesoro y pirata sean iguales, se asignará otra posición al pirata
-         */
-        while(tesoro.getX() == pirata.getX() && tesoro.getY() == pirata.getY()){
-            pirata.setX(rand.nextInt(tamanio-2) + 1); pirata.setY(rand.nextInt(tamanio-2) + 1);
-        }
+        
+        posicionPirata = new int[2];
+        posicionTesoro = new int[2];
+        posicionador = new Posicionador();
+        posicionador.generarPosiciones(posicionPirata, posicionTesoro, tamanio);
+        
+        pirata = new Pirata(posicionPirata);
+        tesoro = new Tesoro(posicionTesoro);
+        
 
         /**
          * Estado inicial

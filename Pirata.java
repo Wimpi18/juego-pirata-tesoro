@@ -14,8 +14,8 @@ public class Pirata extends Elemento{
      * @param x Coordenada en x (filas)
      * @param x Coordenada en y (columnas)
      */
-    public Pirata(int x, int y){
-        super(x, y);
+    public Pirata(int[] coordenadas){
+        super(coordenadas);
         contador = 0;
     }
     
