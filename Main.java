@@ -22,13 +22,7 @@ public class Main
         Scanner lector = new Scanner(System.in);
         int tamanio;
 
-        do{
-            System.out.println("Introduzca el valor de N");
-            tamanio = lector.nextInt();
-            if(verificador.verificarTamanio(tamanio) != null){
-                System.out.println(verificador.verificarTamanio(tamanio));
-            }
-        }while(verificador.verificarTamanio(tamanio) != null);
+        tamanio = obtenerTamanioTablero();
         
         posicionPirata = new int[2];
         posicionTesoro = new int[2];
@@ -67,5 +61,24 @@ public class Main
         }
         System.out.println();
         System.out.println(tablero.getMensaje());
+    }
+    
+    private static int obtenerTamanioTablero(){
+        int tamanio;
+        Scanner lector;
+        Verificador verificador;
+        
+        lector = new Scanner(System.in);
+        verificador = new Verificador();
+        
+        do{
+            System.out.println("Introduzca el valor de N");
+            tamanio = lector.nextInt();
+            if(verificador.verificarTamanio(tamanio) != null){
+                System.out.println(verificador.verificarTamanio(tamanio));
+            }
+        }while(verificador.verificarTamanio(tamanio) != null);
+        
+        return tamanio;
     }
 }

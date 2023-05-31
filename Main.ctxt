@@ -3,4 +3,6 @@ comment0.target=Main
 comment0.text=\r\n\ La\ clase\ Main\ se\ encarga\ de\ ejecutar\ el\ programa,\ para\ ello\ genera\ un\ Random,\ un\ Scanner,\ un\ Pirata,\ un\ Tesoro\ y\ el\ Tablero.\r\n\ \r\n\ @author\ Maida\ Rojas\ Jairo\ Andree,\ \ Morales\ Pinto\ Giulianno\ Alejandro,\ Orellana\ V\u00E1squez\ Winsor\ Omar,\ Vallejos\ Delgadillo\ Mariana\ Andre\r\n\ @version\ 1.0.0\r\n
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
-numComments=2
+comment2.params=
+comment2.target=int\ obtenerTamanioTablero()
+numComments=3
