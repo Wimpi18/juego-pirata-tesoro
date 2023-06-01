@@ -1,14 +1,11 @@
 #BlueJ class context
 comment0.target=Pirata
-comment0.text=\r\n\ La\ clase\ Pirata\ debe\ posicionarse\ en\ una\ casilla\ v\u00E1lida\ del\ Tablero\ distinta\ a\ la\ del\ Tesoro\ y\ ser\ capaz\ de\ moverse\ 50\ veces\r\n\ \r\n\ @author\ Maida\ Rojas\ Jairo\ Andree,\ \ Morales\ Pinto\ Giulianno\ Alejandro,\ Orellana\ V\u00E1squez\ Winsor\ Omar,\ Vallejos\ Delgadillo\ Mariana\ Andre\r\n\ @version\ 1.0.0\r\n
 comment1.params=coordenadas
 comment1.target=Pirata(int[])
-comment1.text=\r\n\ Constructor\ de\ la\ clase\ Pirata\r\n\ \r\n\ @param\ x\ Coordenada\ en\ x\ (filas)\r\n\ @param\ x\ Coordenada\ en\ y\ (columnas)\r\n
 comment2.params=
 comment2.target=void\ incrementarContador()
 comment3.params=
 comment3.target=void\ moverPirata()
-comment3.text=\r\n\ El\ movimiento\ del\ pirata\ es\ definido\ por\ un\ n\u00FAmero\ aleatorio\ entre\ 1\ y\ 4\ tal\ que\ 1\ \=\ Norte,\ 2\ \=\ Sur,\ 3\ \=\ Este\ y\ 4\ \=\ Oeste,\ tras\r\n\ cada\ movimiento\ el\ contador\ aumenta\ en\ 1\ y\ el\ pirata\ solo\ se\ mover\u00E1\ si\ dicho\ contador\ es\ <\ 50\ movimientos.\r\n
 comment4.params=
 comment4.target=int\ getContador()
 comment5.params=c

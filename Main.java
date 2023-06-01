@@ -1,12 +1,6 @@
 import java.util.Scanner;
 import java.util.Random;
 
-/**
- * La clase Main se encarga de ejecutar el programa, para ello genera un Random, un Scanner, un Pirata, un Tesoro y el Tablero.
- * 
- * @author Maida Rojas Jairo Andree,  Morales Pinto Giulianno Alejandro, Orellana Vásquez Winsor Omar, Vallejos Delgadillo Mariana Andre
- * @version 1.0.0
- */
 public class Main
 {
     public static void main(String args[]){

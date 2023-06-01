@@ -1,19 +1,7 @@
-/**
- * Clase abstracta Elemento - Nos permite generalizar los atributos y funciones en común entre Tablero y Pirata
- * 
- * @author Maida Rojas Jairo Andree,  Morales Pinto Giulianno Alejandro, Orellana Vásquez Winsor Omar, Vallejos Delgadillo Mariana Andre
- * @version 1.0.0 
- */
 public abstract class Elemento
 {
     protected int coordenadas[];
-    
-    /**
-     * Constructor de la clase Elemento
-     * 
-     * @param x Coordenada en x (filas)
-     * @param x Coordenada en y (columnas)
-     */
+
     public Elemento(int[] coordenadas){
         this.coordenadas = coordenadas;
     }
