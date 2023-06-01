@@ -42,11 +42,9 @@ public class TableroTest
      */
     @Test 
     public void verificarN(){
-        Verificador verificador;
         
-        verificador = new Verificador();
         String res = "Valor de N invalido, N debe ser mayor o igual a 4";
-        assertEquals(res, verificador.verificarTamanio(3));
+        assertEquals(res, Main.verificarTamanio(3));
     }
 
     /**

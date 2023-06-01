@@ -127,4 +127,12 @@ public class Tablero{
     public String getMensaje(){
         return mensaje;
     }
+    
+    public Pirata getPirata(){
+        return pirata;
+    }
+    
+    public Tesoro getTesoro(){
+        return tesoro;
+    }
 }
