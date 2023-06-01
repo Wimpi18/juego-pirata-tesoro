@@ -11,33 +11,8 @@ public class Main
 {
     public static void main(String args[]){
         Tablero tablero;
-
         tablero = iniciarTablero();
-
-        System.out.println(tablero.mostrar());
-        System.out.println("Contador de movimientos " + tablero.getPirata().getContador());
-        System.out.println();
-
-        /**
-         * Mientras no se dé ninguna situación de victoria o derrota, el pirata seguirá moviendose por el tablero aumentando tras
-         * cada movimiento su contador de movimientos
-         */
-        while(!tablero.juegoFinalizado()){
-            tablero.jugar();
-            System.out.println(tablero.mostrar());
-            System.out.println("Contador de movimientos " + tablero.getPirata().getContador());
-            System.out.println();
-            try
-            {
-                Thread.sleep(2000);
-            }
-            catch (java.lang.InterruptedException ie)
-            {
-                ie.printStackTrace();
-            }
-        }
-        System.out.println();
-        System.out.println(tablero.getMensaje());
+        jugar(tablero);
     }
 
     public static String verificarTamanio(int tamanio){
@@ -50,23 +25,7 @@ public class Main
         }
         return mensaje;
     }
-
-    private static void generarPosiciones(int[] posicion1, int[] posicion2, int tamanio){
-        Random rand = new Random();
-        posicion1 = new int[2];
-        posicion2 = new int[2];
-
-        posicion1[0] = rand.nextInt(tamanio-2) + 1;
-        posicion1[1] = rand.nextInt(tamanio-2) + 1;
-        posicion2[0] = rand.nextInt(tamanio-2) + 1;
-        posicion2[1] = rand.nextInt(tamanio-2) + 1;
-
-        while(posicion2[0] == posicion1[0] && posicion2[1] == posicion1[1]){
-            posicion1[0] = rand.nextInt(tamanio-2) + 1;
-            posicion1[1] = rand.nextInt(tamanio-2) + 1;
-        }
-    }
-
+    
     private static int obtenerTamanioTablero(){
         int tamanio;
         Scanner lector;
@@ -86,7 +45,7 @@ public class Main
 
     private static void iniciarPirataYTesoro(Pirata pirata, Tesoro tesoro, int tamanio){
         Random rand = new Random();
-        
+
         pirata.setX(rand.nextInt(tamanio-2) + 1);
         pirata.setY(rand.nextInt(tamanio-2) + 1);
         tesoro.setX(rand.nextInt(tamanio-2) + 1);
@@ -113,5 +72,26 @@ public class Main
         tablero = new Tablero(tamanio, pirata, tesoro);
 
         return tablero;
+    }
+
+    private static void jugar(Tablero tablero){
+        do{
+            System.out.println(tablero.mostrar());
+            System.out.println("Contador de movimientos " + tablero.getPirata().getContador());
+            System.out.println();
+            tablero.jugar();
+            try
+            {
+                Thread.sleep(2000);
+            }
+            catch (java.lang.InterruptedException ie)
+            {
+                ie.printStackTrace();
+            }
+        }while(!tablero.juegoFinalizado());
+        System.out.println(tablero.mostrar());
+        System.out.println("Contador de movimientos " + tablero.getPirata().getContador());
+        System.out.println();
+        System.out.println(tablero.getMensaje());
     }
 }
