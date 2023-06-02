@@ -78,7 +78,6 @@ public class Tablero{
     public void jugar(){
         pirata.moverPirata();
         verificarEstadoJuego();
-        cargarMatriz();
     }
 
     public void verificarEstadoJuego(){
