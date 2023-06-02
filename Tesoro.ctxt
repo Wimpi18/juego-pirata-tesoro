@@ -2,5 +2,4 @@
 comment0.target=Tesoro
 comment1.params=coordenadas
 comment1.target=Tesoro(int[])
-comment1.text=\r\n\ Constructor\ de\ la\ clase\ Tesoro\r\n\ \r\n\ @param\ x\ Coordenada\ en\ x\ (filas)\r\n\ @param\ x\ Coordenada\ en\ y\ (columnas)\r\n
 numComments=2

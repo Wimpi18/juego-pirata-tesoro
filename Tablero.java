@@ -15,7 +15,35 @@ public class Tablero{
         mensaje = null;
     }
 
-    public char[][] cargarMatriz(){
+    public String mostrar(){
+        String muestra, separador, fila;
+        char[][] matriz;
+        
+        matriz = cargarMatriz();
+        muestra = "";
+        separador = "";
+
+        for(int i = 0 ; i < tamanio ; i++){
+            separador += "+---";
+        }
+        separador += "+";
+
+        for(int i = 0 ; i < tamanio ; i++){
+            fila = "";
+
+            for(int j = 0 ; j < tamanio; j++){
+                fila += "| " + matriz[i][j] + " ";
+            }
+            fila += "|";
+            muestra += separador + "\n" + fila + "\n";
+        }
+
+        muestra += separador;
+        
+        return muestra;
+    }
+    
+    private char[][] cargarMatriz(){
         char[][] matriz;
         
         matriz = new char[tamanio][tamanio];
@@ -45,34 +73,6 @@ public class Tablero{
         matriz[0][tamanio-1] = matriz[tamanio-1][0] = 'P';
         
         return matriz;
-    }
-
-    public String mostrar(){
-        String muestra, separador, fila;
-        char[][] matriz;
-        
-        matriz = cargarMatriz();
-        muestra = "";
-        separador = "";
-
-        for(int i = 0 ; i < tamanio ; i++){
-            separador += "+---";
-        }
-        separador += "+";
-
-        for(int i = 0 ; i < tamanio ; i++){
-            fila = "";
-
-            for(int j = 0 ; j < tamanio; j++){
-                fila += "| " + matriz[i][j] + " ";
-            }
-            fila += "|";
-            muestra += separador + "\n" + fila + "\n";
-        }
-
-        muestra += separador;
-        
-        return muestra;
     }
 
     public void jugar(){
