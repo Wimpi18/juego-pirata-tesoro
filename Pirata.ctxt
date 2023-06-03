@@ -9,8 +9,11 @@ comment2.target=void\ incrementarContador()
 comment3.params=
 comment3.target=void\ moverPirata()
 comment3.text=\r\n\ El\ movimiento\ del\ pirata\ es\ definido\ por\ un\ n\u00FAmero\ aleatorio\ entre\ 1\ y\ 4\ tal\ que\ 1\ \=\ Norte,\ 2\ \=\ Sur,\ 3\ \=\ Este\ y\ 4\ \=\ Oeste,\ tras\r\n\ cada\ movimiento\ el\ contador\ aumenta\ en\ 1\ y\ el\ pirata\ solo\ se\ mover\u00E1\ si\ dicho\ contador\ es\ <\ 50\ movimientos.\r\n
-comment4.params=
-comment4.target=int\ getContador()
-comment5.params=c
-comment5.target=void\ setContador(int)
-numComments=6
+comment4.params=tesoro\ n
+comment4.target=void\ verificarPosicionesDistintas(Tesoro,\ int)
+comment4.text=\r\n\ Mientras\ las\ posiciones\ del\ tesoro\ y\ pirata\ sean\ iguales,\ se\ asignar\u00E1\ otra\ posici\u00F3n\ al\ pirata\r\n
+comment5.params=
+comment5.target=int\ getContador()
+comment6.params=c
+comment6.target=void\ setContador(int)
+numComments=7

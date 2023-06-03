@@ -20,9 +20,9 @@ public class TableroTest
     public void iniciarMatriz(){
         Tablero tablero;
 
-        tablero = new Tablero(null, null);
+        tablero = new Tablero(5);
 
-        tablero.iniciar(5);
+        tablero.inicializar(5);
 
         String res = "+---+---+---+---+---+\n" +
             "| A | G | U | A | P |\n" +
@@ -35,21 +35,8 @@ public class TableroTest
             "+---+---+---+---+---+\n" +
             "| P | A | U | G | A |\n" +
             "+---+---+---+---+---+";
-
         assertEquals(res, tablero.mostrar());
-    }
-    
-    /**
-     * Test de la verificación del valor N sea >= 4
-     */
-    @Test 
-    public void verificarN(){
-        Tablero tablero;
-        tablero = new Tablero(null, null);
-
-        String res = "Valor de n invalido, n debe ser mayor o igual a 4";
-        assertEquals(res, tablero.verificarn(3));
-    }
+    }    
 
     /**
      * Test de victoria dado una posición inicial cercana a una casilla y un movimiento en el cual el Pirata y el Tesoro coinciden 
@@ -57,12 +44,10 @@ public class TableroTest
      */
     @Test 
     public void testVictoria(){
-        Pirata pirata = new Pirata(2, 2);
-        Tesoro tesoro = new Tesoro(2, 3);
-        Tablero tablero = new Tablero(pirata, tesoro);
-        tablero.iniciar(5); 
+        Tablero tablero = new Tablero(4);
+        tablero.inicializar(5); 
 
-        pirata.setY(pirata.getY()+1);
+        //pirata.setY(pirata.getY()+1);
         tablero.verificarEstadoJuego();
 
         assertEquals("VICTORIA!!! TESORO ENCONTRADO!!!", tablero.getMensaje());
@@ -76,7 +61,7 @@ public class TableroTest
         Pirata pirata = new Pirata(1, 1);
         Tesoro tesoro = new Tesoro(2, 3);
         Tablero tablero = new Tablero(pirata, tesoro);
-        tablero.iniciar(5); 
+        tablero.inicializar(5); 
 
         pirata.setContador(50);
         tablero.verificarEstadoJuego();
@@ -92,7 +77,7 @@ public class TableroTest
         Pirata pirata = new Pirata(1, 1);
         Tesoro tesoro = new Tesoro(2, 3);
         Tablero tablero = new Tablero(pirata, tesoro);
-        tablero.iniciar(5); 
+        tablero.inicializar(5); 
 
         pirata.setY(pirata.getX()-1);
         tablero.verificarEstadoJuego();

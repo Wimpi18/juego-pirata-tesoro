@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=Norte
+comment0.text=\r\n\ @author\ Maida\ Rojas\ Jairo\ Andree,\ \ Morales\ Pinto\ Giulianno\ Alejandro,\ Orellana\ V\u00E1squez\ Winsor\ Omar,\ Vallejos\ Delgadillo\ Mariana\ Andre\r\n\ @version\ 1.0.0\ \r\n
+comment1.params=pirata
+comment1.target=void\ setPosicion(Pirata)
+numComments=2

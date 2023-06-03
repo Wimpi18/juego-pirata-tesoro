@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Graficador
+comment1.params=tablero
+comment1.target=Graficador(Tablero)
+comment2.params=
+comment2.target=java.lang.String\ mostrar()
+comment3.params=
+comment3.target=java.lang.String\ generarSeparador()
+comment4.params=matriz
+comment4.target=java.lang.String\ generarMuestra(char[][])
+numComments=5

@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Random;
 /**
  * La clase Tablero se encarga de administrar al Pirata y al Tesoro, también cuenta con un 'n' para generar la matriz del tablero el cual
  * debe ser mayor o igual a 4, el mismo tablero se encarga de verificar este valor. Por último verifica el estado del juego
@@ -8,13 +9,14 @@ import java.util.Arrays;
  * @version 1.0.0
  */
 public class Tablero{
-    
     private char [][] matriz;
     private int n;
     private Pirata pirata;
     private Tesoro tesoro;
     private boolean juegoFinalizado;
+    private Random rand;
     private String mensaje;
+    private Graficador graficador;
 
     /**
      * Constructor de la clase Tablero
@@ -22,28 +24,26 @@ public class Tablero{
      * @param pirata Se requiere un pirata para jugar una partida
      * @param tesoro Se requiere un tesoro el cual intentará encontrar el pirata 
      */
-    public Tablero(Pirata pirata, Tesoro tesoro)
-    {
-        this.pirata = pirata;
-        this.tesoro = tesoro;
+    public Tablero(int N_Casillas){
+        rand = new Random();
+        this.n = N_Casillas;
+        instanciarPirata_Tesoro();
+        graficador = new Graficador(this);
+        matriz = new char[this.n][this.n];
         mensaje = null;
     }
 
-    /**
-     * Dado un 'n' se verificará que este 'n' sea >= 4
-     * 
-     * @param n Tamaño de la matriz cuadrada a generar
-     */
-    String verificarn(int n){
-        String mensaje;
-        
-        if(n >= 4){
-            mensaje = null;
-        }else{
-            mensaje = "Valor de n invalido, n debe ser mayor o igual a 4";
-        }
-        
-        return mensaje;
+    public Tablero(Pirata pirata, Tesoro tesoro){
+        this.pirata = pirata;
+        this.tesoro = tesoro;
+        graficador = new Graficador(this);
+        mensaje = null;
+    }
+
+    private void instanciarPirata_Tesoro(){
+        this.pirata = new Pirata(rand.nextInt(n-2) + 1, rand.nextInt(n-2) + 1);
+        this.tesoro = new Tesoro(rand.nextInt(n-2) + 1, rand.nextInt(n-2) + 1);
+        this.pirata.verificarPosicionesDistintas(this.tesoro, this.n);
     }
 
     /**
@@ -51,15 +51,22 @@ public class Tablero{
      * 
      * @param n Tamaño de la matriz cuadrada a generar
      */
-    public void iniciar(int n){
+    public void inicializar(int n){
         this.n = n;
-        matriz = new char[n][n];
+        agregarEspacios();
+        agregarBordes();
+        agregarPirata_Tesoro();
+    }
+
+    private void agregarEspacios(){
         for(int i = 1; i < n-1; i++){
             for(int j = 0; j < n-1; j++){
                 matriz[i][j] = ' ';
             }
         }
+    }
 
+    private void agregarBordes(){
         for(int i = 1, j = 1; i < n-1; i++, j++){
             if(j == 1){
                 matriz[0][i] = matriz[i][0] = matriz[n-1-i][n-1] = matriz[n-1][n-1-i] = 'G';
@@ -70,45 +77,29 @@ public class Tablero{
                 j = 0;
             }
         }
+        matriz[0][0] = matriz[n-1][n-1] = 'A';
+        matriz[0][n-1] = matriz[n-1][0] = 'P';
+    }
 
+    private void agregarPirata_Tesoro(){
         if(pirata != null && tesoro != null){
             matriz[tesoro.getX()][tesoro.getY()] = 'T';
             matriz[pirata.getX()][pirata.getY()] = 'W';
         }
+    }
 
-        matriz[0][0] = matriz[n-1][n-1] = 'A';
-        matriz[0][n-1] = matriz[n-1][0] = 'P';
+    private void moverPirata(){
+        matriz[pirata.getX()][pirata.getY()] = ' ';
+        pirata.moverPirata();
+        matriz[pirata.getX()][pirata.getY()] = 'W';
     }
 
     /**
      * Genera la matriz para imprimirse en consola
      */
     public String mostrar(){
-        String muestra;
-
-        String separador;
-        String fila;
-
-        muestra = "";
-        separador = "";
-
-        for(int i = 0 ; i < n ; i++){
-            separador += "+---";
-        }
-        separador += "+";
-
-        for(int i = 0 ; i < n ; i++){
-            fila = "";
-
-            for(int j = 0 ; j < n ; j++){
-                fila += "| " + matriz[i][j] + " ";
-            }
-            fila += "|";
-            muestra += separador + "\n" + fila + "\n";
-        }
-
-        muestra += separador;
-        return muestra;
+        String resultado = graficador.mostrar();
+        return resultado;
     }
 
     /**
@@ -116,9 +107,9 @@ public class Tablero{
      * (3) Actualiza los valores de la matriz
      */
     public void jugar(){
-        pirata.moverPirata();
+        moverPirata();
         verificarEstadoJuego();
-        iniciar(n);
+        mostrar();
     }
 
     /**
@@ -146,5 +137,17 @@ public class Tablero{
 
     public String getMensaje(){
         return mensaje;
+    }
+
+    public Pirata getPirata(){
+        return pirata;
+    }
+
+    public int getN(){
+        return n;
+    }
+
+    public char[][] getMatriz(){
+        return matriz;
     }
 }
